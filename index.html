@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp Mời Lễ Tốt Nghiệp — Quỳnh Giang</title>
+  <meta name="description"
+    content="Thiệp mời lễ tốt nghiệp của Quỳnh Giang — Chủ Nhật, 16/08/2026 tại Hội trường 700, 58 Lê Văn Hiến, Hà Nội.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f5f0e8;
+      --bg-card: #faf8f4;
+      --white: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #8a8580;
+      --border: #e8e2d9;
+      --btn-from: #c4a882;
+      --btn-to: #d9bf9a;
+      --pink: #f0a8a8;
+      --pink-dark: #e89090;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Be Vietnam Pro', sans-serif;
+      --script: 'Caveat', cursive;
+      --max-w: 480px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.landing-active {
+      overflow: hidden;
+    }
+
+    /* ===== MUSIC BTN ===== */
+    .music-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 200;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--pink);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 16px rgba(240, 168, 168, 0.5);
+      transition: transform 0.3s ease, background 0.2s, opacity 0.4s ease;
+    }
+
+    body.landing-active .music-btn {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.8);
+    }
+
+    .music-btn:hover {
+      transform: scale(1.08);
+      background: var(--pink-dark);
+    }
+
+    .music-btn.playing {
+      animation: pulse-music 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-music {
+
+      0%,
+      100% {
+        box-shadow: 0 4px 16px rgba(240, 168, 168, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 4px 24px rgba(240, 168, 168, 0.8);
+      }
+    }
+
+    /* ===== LANDING ===== */
+    #landing {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: radial-gradient(circle at 50% 35%, #fbf8f3 0%, #e9e0d2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      transition: opacity 0.9s ease, visibility 0.9s ease;
+    }
+
+    #landing::before {
+      content: '';
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(230, 200, 165, 0.4) 0%, rgba(240, 168, 168, 0.15) 50%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    #landing.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .landing-inner {
+      max-width: var(--max-w);
+      width: 100%;
+      text-align: center;
+      position: relative;
+      background: var(--bg-card);
+      padding: 52px 32px 44px;
+      border-radius: 24px;
+      border: 1px solid rgba(196, 168, 130, 0.35);
+      box-shadow: 0 20px 60px -10px rgba(90, 75, 60, 0.12), 0 6px 20px -4px rgba(0, 0, 0, 0.04);
+      animation: fade-up 0.8s ease both;
+    }
+
+    /* Viền họa tiết kép sang trọng bên trong card */
+    .landing-inner::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(196, 168, 130, 0.25);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .landing-envelope {
+      font-size: 2.2rem;
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, #fdfbf7, #eee3d3);
+      border: 1px solid rgba(196, 168, 130, 0.45);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(196, 168, 130, 0.25);
+      animation: float-env 3s ease-in-out infinite;
+    }
+
+    @keyframes float-env {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .landing-label {
+      font-family: var(--serif);
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      animation: fade-up 0.8s ease 0.2s both;
+    }
+
+    .landing-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 5vw, 2rem);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      animation: fade-up 0.8s ease 0.35s both;
+    }
+
+    .landing-of {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin: 6px 0 10px;
+      animation: fade-up 0.8s ease 0.45s both;
+    }
+
+    .landing-name {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 8vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 24px;
+      animation: fade-up 0.8s ease 0.55s both;
+    }
+
+    .landing-deco {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--btn-from);
+      opacity: 0.65;
+      margin-bottom: 32px;
+      animation: fade-up 0.8s ease 0.6s both;
+    }
+
+    .landing-guest {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--btn-from);
+      margin-top: -12px;
+      margin-bottom: 18px;
+      animation: fade-up 0.8s ease 0.58s both;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .open-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(196, 168, 130, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: fade-up 0.8s ease 0.7s both;
+    }
+
+    .open-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(196, 168, 130, 0.55);
+    }
+
+    /* ===== MAIN APP ===== */
+    #app {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease 0.3s;
+    }
+
+    #app.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    section {
+      padding: 40px 0;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== INVITE CARD (scrapbook) ===== */
+    .invite-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .invite-header .label {
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .invite-header .title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 4.5vw, 1.85rem);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 4px 0;
+    }
+
+    .invite-header .of {
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    .invite-header .name {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 6vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scrapbook-card {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 4px;
+      padding: 28px 20px 32px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .scrap-deco {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .deco-cap {
+      top: -8px;
+      left: -4px;
+      font-size: 2.2rem;
+      transform: rotate(-15deg);
+    }
+
+    .deco-tape-label {
+      top: 12px;
+      right: 8px;
+      background: rgba(210, 190, 160, 0.7);
+      padding: 4px 10px;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      transform: rotate(3deg);
+      color: #5a5048;
+    }
+
+    .deco-vertical {
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      max-height: 180px;
+      line-height: 1.8;
+    }
+
+    .deco-stamp {
+      bottom: 16px;
+      right: 8px;
+      width: 72px;
+      height: 72px;
+      border: 2px solid var(--text-muted);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.45rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transform: rotate(12deg);
+      line-height: 1.4;
+      padding: 4px;
+    }
+
+    .polaroid {
+      position: relative;
+      max-width: 260px;
+      margin: 20px auto 16px;
+      background: var(--white);
+      padding: 10px 10px 36px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      transform: rotate(-1deg);
+    }
+
+    .tape {
+      position: absolute;
+      width: 60px;
+      height: 22px;
+      background: rgba(210, 190, 160, 0.65);
+      z-index: 2;
+    }
+
+    .tape-tl {
+      top: -8px;
+      right: 20px;
+      transform: rotate(35deg);
+    }
+
+    .tape-br {
+      bottom: 24px;
+      left: 16px;
+      transform: rotate(-25deg);
+    }
+
+    .polaroid img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .polaroid-caption {
+      font-family: var(--script);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ===== WELCOME GREETING BOX ===== */
+    .welcome-box {
+      text-align: center;
+      background: #fdfbf8;
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin: 20px 0 16px;
+      border: 1px dashed rgba(196, 168, 130, 0.45);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    }
+
+    .welcome-to {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+      font-weight: 600;
+      color: #7a5c36;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .welcome-text {
+      font-size: 0.85rem;
+      color: #55504a;
+      line-height: 1.75;
+    }
+
+    .scrap-stars {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
+
+    /* ===== DATE TIME ===== */
+    .datetime-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+
+    .datetime-col {
+      text-align: center;
+      padding: 16px 12px;
+    }
+
+    .datetime-col:first-child {
+      border-right: 1px solid var(--border);
+    }
+
+    .datetime-icon {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      opacity: 0.7;
+    }
+
+    .datetime-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .datetime-value {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 3.5vw, 1.15rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* Calendar */
+    .calendar-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .calendar-header {
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      text-align: center;
+    }
+
+    .cal-day-name {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding: 4px 0;
+    }
+
+    .cal-day {
+      font-size: 0.8rem;
+      padding: 6px 2px;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+    }
+
+    .cal-day.empty {
+      visibility: hidden;
+    }
+
+    .cal-day.highlight {
+      background: var(--text);
+      color: var(--white);
+      position: relative;
+    }
+
+    .cal-day.highlight::after {
+      content: '♥';
+      position: absolute;
+      font-size: 0.45rem;
+      bottom: 1px;
+      opacity: 0.8;
+    }
+
+    /* ===== LOCATION ===== */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 28px;
+    }
+
+    .location-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-name {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .location-address {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .map-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      aspect-ratio: 16/10;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ===== COUNTDOWN ===== */
+    .countdown-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      margin-top: 32px;
+    }
+
+    .countdown-script {
+      font-family: var(--script);
+      font-size: 1.8rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .countdown-line {
+      width: 80px;
+      height: 1px;
+      background: var(--text);
+      margin: 0 auto 6px;
+      position: relative;
+    }
+
+    .countdown-line::after {
+      content: '♡';
+      position: absolute;
+      right: -12px;
+      top: -8px;
+      font-size: 0.75rem;
+    }
+
+    .countdown-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: clamp(10px, 4vw, 24px);
+    }
+
+    .countdown-unit {
+      text-align: center;
+    }
+
+    .countdown-sep {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-muted);
+      align-self: flex-start;
+      padding-top: 4px;
+      opacity: 0.4;
+    }
+
+    .countdown-num {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+    }
+
+    .countdown-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-title {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 4vw, 1.55rem);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* g1 trải full width — ảnh ngang hiển thị tự nhiên */
+    .gallery-grid img.g1 {
+      grid-column: span 2;
+      aspect-ratio: 16 / 7;
+      height: auto;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* g2 — g5: ô vuông đều nhau */
+    .gallery-grid img.g4,
+    .gallery-grid img.g5 {
+      aspect-ratio: 4 / 3;
+      height: auto;
+    }
+
+    /* g2: lui xuống 1 chút */
+    .gallery-grid img.g2 {
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-position: center 30%;
+    }
+
+    /* g3: ảnh chân dung — ưu tiên hiển thị phần mặt */
+    .gallery-grid img.g3 {
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-position: top;
+    }
+
+    /* g6 trải full width cuối — lui xuống 1 chút */
+    .gallery-grid img.g6 {
+      grid-column: span 2;
+      aspect-ratio: 16 / 7;
+      height: auto;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img.g1,
+      .gallery-grid img.g6 {
+        grid-column: span 1;
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    /* ===== GUESTBOOK ===== */
+    .guestbook-title {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 4vw, 1.55rem);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .guestbook-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+    }
+
+    .guestbook-form input,
+    .guestbook-form textarea {
+      width: 100%;
+      border: none;
+      background: #f5f2ed;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 10px;
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+
+    .guestbook-form input:focus,
+    .guestbook-form textarea:focus {
+      box-shadow: 0 0 0 2px rgba(196, 168, 130, 0.4);
+    }
+
+    .guestbook-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .guestbook-form input::placeholder,
+    .guestbook-form textarea::placeholder {
+      color: #b0a99f;
+    }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .send-btn {
+      background: var(--text);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .send-btn:hover {
+      opacity: 0.85;
+    }
+
+    .messages-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .messages-list::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .messages-list::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    .message-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .message-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .message-time {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .message-text {
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER DECO ===== */
+    .footer-deco {
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .footer-message {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+      font-style: italic;
+    }
+
+    .footer-collage {
+      position: relative;
+      height: 180px;
+      margin-bottom: 32px;
+    }
+
+    .footer-collage span {
+      position: absolute;
+      font-size: 1.6rem;
+    }
+
+    .fc-cap {
+      top: 20px;
+      left: 30%;
+      transform: rotate(-10deg);
+    }
+
+    .fc-flower {
+      top: 0;
+      right: 25%;
+      font-size: 1.2rem;
+    }
+
+    .fc-polaroid {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(3deg);
+      background: var(--white);
+      padding: 6px 6px 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      font-size: 0 !important;
+      width: 80px;
+    }
+
+    .fc-polaroid img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .fc-script {
+      bottom: 30px;
+      right: 10%;
+      font-family: var(--script);
+      font-size: 0.95rem !important;
+      color: var(--text-muted);
+      transform: rotate(-5deg);
+    }
+
+    .fc-barcode {
+      top: 30px;
+      left: 8%;
+      font-size: 0.55rem !important;
+      letter-spacing: 0.05em;
+      writing-mode: vertical-rl;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 2px dotted var(--border);
+      margin: 0 auto 20px;
+      max-width: 200px;
+    }
+
+    .footer-brand {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== DESKTOP: center card on wide screens ===== */
+    @media (min-width: 768px) {
+      body {
+        background: radial-gradient(circle at 50% 35%, #fbf8f3 0%, #e9e0d2 100%);
+      }
+
+      .page-wrap {
+        background: var(--bg);
+        margin-top: 0;
+        min-height: 100vh;
+        box-shadow: 0 0 60px rgba(120, 100, 80, 0.12);
+      }
+
+      #landing .landing-inner {
+        background: var(--bg-card);
+        padding: 56px 40px 48px;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px -10px rgba(90, 75, 60, 0.14), 0 6px 20px -4px rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    /* ===== LIGHTBOX ===== */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      cursor: zoom-out;
+    }
+
+    #lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      transform: scale(0.88);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: default;
+    }
+
+    #lightbox.open img {
+      transform: scale(1);
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      line-height: 1;
+    }
+
+    #lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .gallery-grid img {
+      cursor: zoom-in;
+    }
+
+    /* ===== FALLING PETALS ===== */
+    .petal {
+      position: fixed;
+      top: -40px;
+      pointer-events: none;
+      z-index: 50;
+      user-select: none;
+      animation: petalFall linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes petalFall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      5% {
+        opacity: var(--op);
+      }
+
+      50% {
+        transform: translateY(50vh) translateX(var(--sway)) rotate(180deg);
+        opacity: var(--op);
+      }
+
+      95% {
+        opacity: var(--op);
+      }
+
+      100% {
+        transform: translateY(110vh) translateX(calc(var(--sway)*2)) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="landing-active">
+
+  <!-- Falling Petals -->
+  <div id="petalContainer" aria-hidden="true"></div>
+
+  <!-- Music -->
+  <button class="music-btn" id="musicBtn" title="Bật/tắt nhạc">🔇</button>
+  <audio id="bgMusic" loop preload="auto" muted>
+    <source src="bg-music.mp3?v=2" type="audio/mpeg">
+  </audio>
+
+  <!-- ===== LANDING ===== -->
+  <div id="landing">
+    <div class="landing-inner">
+      <div class="landing-envelope">✉️</div>
+      <p class="landing-label">Thư mời tham dự</p>
+      <h1 class="landing-title">Lễ Tốt Nghiệp</h1>
+      <p class="landing-of">của</p>
+      <p class="landing-name" id="landingName">Quỳnh Giang</p>
+      <p class="landing-guest" id="landingGuest">Kính mời: Bạn </p>
+      <div class="landing-deco">✦ ♡ ✦</div>
+      <button class="open-btn" id="openBtn">Mở thiệp <span>→</span></button>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div id="app">
+    <div class="page-wrap">
+
+      <!-- Scrapbook invite -->
+      <section id="sec-invite">
+        <div class="invite-header">
+          <p class="label">Thư mời tham dự</p>
+          <h2 class="title">Lễ Tốt Nghiệp</h2>
+          <p class="of">của</p>
+          <p class="name" id="cardName">Quỳnh Giang</p>
+        </div>
+
+        <div class="scrapbook-card">
+          <span class="scrap-deco deco-cap">🎓</span>
+          <span class="scrap-deco deco-tape-label">GRADUATION</span>
+          <span class="scrap-deco deco-vertical">You're invited to celebrate a milestone worth remembering.</span>
+          <span class="scrap-deco deco-stamp">The next chapter awaits · class of 2026</span>
+
+          <div class="polaroid">
+            <div class="tape tape-tl"></div>
+            <div class="tape tape-br"></div>
+            <img id="mainPhoto" src="images/main-photo.png" alt="Quỳnh Giang">
+          </div>
+          <p class="polaroid-caption">new chapter, new adventures</p>
+
+          <!-- Lời chào & Lời mời mở đầu -->
+          <div class="welcome-box">
+            <p class="welcome-to" id="welcomeGuest">Trân trọng kính mời Bạn</p>
+            <p class="welcome-text" id="welcomeText">
+              Hành trình 4 năm học tập đã chính thức khép lại để mở ra những bước tiến mới. Sự hiện diện và những lời
+              chúc của bạn chính là món quà ý nghĩa nhất đối với Quỳnh Giang trong ngày đặc biệt này! ❤️
+            </p>
+          </div>
+
+          <div class="scrap-stars">✦ ♡ ✦</div>
+        </div>
+      </section>
+
+      <!-- Date & Time -->
+      <section id="sec-datetime">
+        <div class="datetime-row">
+          <div class="datetime-col">
+            <div class="datetime-icon">📅</div>
+            <p class="datetime-label">Ngày tổ chức</p>
+            <p class="datetime-value" id="eventDate">Chủ Nhật, 16.08.2026</p>
+          </div>
+          <div class="datetime-col">
+            <div class="datetime-icon">🕑</div>
+            <p class="datetime-label">Vào lúc</p>
+            <p class="datetime-value" id="eventTime">14:00</p>
+          </div>
+        </div>
+
+        <div class="calendar-card">
+          <p class="calendar-header" id="calTitle">Tháng 8 / 2026</p>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </section>
+
+      <!-- Location -->
+      <section id="sec-location">
+        <hr class="section-divider">
+        <p class="location-label">📍 Địa điểm</p>
+        <h2 class="location-name" id="locationName">Hội trường 700</h2>
+        <p class="location-address" id="locationAddress">58 Lê Văn Hiến, Đông Ngạc, Bắc Từ Liêm, Hà Nội</p>
+        <div class="map-wrap">
+          <iframe id="mapFrame"
+            src="https://maps.google.com/maps?q=58+L%C3%AA+V%C4%83n+Hi%E1%BA%BFn%2C+%C4%90%C3%B4ng+Ng%E1%BA%A1c%2C+B%E1%BA%AFc+T%E1%BB%AB+Li%C3%AAm%2C+H%C3%A0+N%E1%BB%99i&output=embed&z=16"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-card">
+          <p class="countdown-script">let's celebrate!</p>
+          <div class="countdown-line"></div>
+          <p class="countdown-sub">Đếm ngược đến ngày đặc biệt</p>
+          <div class="countdown-timer">
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cdDays">00</span>
+              <span class="countdown-label">Ngày</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cdHours">00</span>
+              <span class="countdown-label">Giờ</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cdMins">00</span>
+              <span class="countdown-label">Phút</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cdSecs">00</span>
+              <span class="countdown-label">Giây</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="sec-gallery">
+        <h2 class="gallery-title">Những khoảnh khắc thanh xuân</h2>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <!-- Guestbook -->
+      <section id="sec-guestbook">
+        <h2 class="guestbook-title">Sổ lưu bút</h2>
+        <div class="guestbook-form">
+          <input type="text" id="gbName" placeholder="Nhập tên của bạn" maxlength="50">
+          <textarea id="gbMessage" placeholder="Nhập lời chúc của bạn" maxlength="300"></textarea>
+          <div class="form-footer">
+            <span class="form-hint">💡 Gửi lời chúc đến Quỳnh Giang</span>
+            <button class="send-btn" id="gbSend">Gửi lời chúc</button>
+          </div>
+        </div>
+        <div class="messages-list" id="messagesList"></div>
+      </section>
+
+      <!-- Footer -->
+      <section id="sec-footer" class="footer-deco">
+        <div class="footer-message" id="footerMessage">
+          Chúc em iu luôn thành công và hạnh phúc trên con đường phía trước! ❤️
+        </div>
+        <div class="footer-collage">
+          <span class="fc-barcode">GRADUATION<br>2026</span>
+          <span class="fc-flower">🌸</span>
+          <span class="fc-cap">🎓</span>
+          <span class="fc-polaroid">
+            <img src="images/main-photo.png" alt=""
+              onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=150&h=150&fit=crop'">
+          </span>
+          <span class="fc-script">new chapter,<br>new adventures ♡</span>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-brand">🎓 Lễ Tốt Nghiệp · Quỳnh Giang · 2026</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh">
+    <button id="lightbox-close" title="Đóng">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // ===== CẤU HÌNH — Sửa thông tin tại đây =====
+    const CONFIG = {
+      name: 'Quỳnh Giang',
+      eventDate: '2026-08-16T14:00:00',
+      eventDateLabel: 'Chủ Nhật, 16.08.2026',
+      eventTime: '14:00',
+      locationName: 'Hội trường 700',
+      locationAddress: '58 Lê Văn Hiến, Đông Ngạc, Bắc Từ Liêm, Hà Nội',
+      mapQuery: '58+L%C3%AA+V%C4%83n+Hi%E1%BA%BFn%2C+%C4%90%C3%B4ng+Ng%E1%BA%A1c%2C+B%E1%BA%AFc+T%E1%BB%AB+Li%C3%AAm%2C+H%C3%A0+N%E1%BB%99i',
+      mainPhoto: 'images/main-photo.png',
+      footerMessage: 'Chúc em iu luôn thành công và hạnh phúc trên con đường phía trước! ❤️',
+      gallery: [
+        { src: 'images/TT_09318.JPG', cls: 'g1' },
+        { src: 'images/TT_09395.JPG', cls: 'g2' },
+        { src: 'images/quality_restoration_20260730164337496.jpeg', cls: 'g3' },
+        { src: 'images/TT_09535.JPG', cls: 'g4' },
+        { src: 'images/TT_09423 (1).JPG', cls: 'g5' },
+        { src: 'images/quality_restoration_20260731220548708.jpeg', cls: 'g6' },
+      ],
+      sampleMessages: [],
+      guestName: 'Bạn',
+      welcomeText: 'Hành trình 4 năm học tập đã chính thức khép lại để mở ra những bước tiến mới. Sự hiện diện và những lời chúc của bạn chính là món quà ý nghĩa nhất đối với Quỳnh Giang trong ngày đặc biệt này! ❤️',
+    };
+    // ===== Init config =====
+    // Lấy tên người nhận từ URL (ví dụ: ?to=Anh+Hùng)
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestParam = urlParams.get('to');
+    const displayGuest = guestParam ? guestParam.trim() : CONFIG.guestName;
+
+    document.getElementById('landingGuest').textContent = `Kính mời: ${displayGuest}`;
+    document.getElementById('welcomeGuest').textContent = `Trân trọng kính mời ${displayGuest}`;
+    document.getElementById('welcomeText').textContent = CONFIG.welcomeText;
+
+    document.getElementById('landingName').textContent = CONFIG.name;
+    document.getElementById('cardName').textContent = CONFIG.name;
+    document.getElementById('eventDate').textContent = CONFIG.eventDateLabel;
+    document.getElementById('eventTime').textContent = CONFIG.eventTime;
+    document.getElementById('locationName').textContent = CONFIG.locationName;
+    document.getElementById('locationAddress').textContent = CONFIG.locationAddress;
+    document.getElementById('mainPhoto').src = CONFIG.mainPhoto;
+    document.getElementById('footerMessage').textContent = CONFIG.footerMessage;
+    document.getElementById('mapFrame').src = `https://maps.google.com/maps?q=${CONFIG.mapQuery}&output=embed&z=16`;
+
+    // Gallery
+    const galleryGrid = document.getElementById('galleryGrid');
+    CONFIG.gallery.forEach(g => {
+      const img = document.createElement('img');
+      img.src = g.src;
+      img.alt = 'Kỷ yếu';
+      img.className = g.cls;
+      img.loading = 'lazy';
+      img.onerror = function () {
+        this.onerror = null;
+        this.style.background = '#e8e2d9';
+        this.removeAttribute('src');
+      };
+      img.addEventListener('click', () => openLightbox(img.src));
+      galleryGrid.appendChild(img);
+    });
+
+    // ===== Lightbox =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ===== Calendar =====
+    function buildCalendar(year, month, highlightDay) {
+      const grid = document.getElementById('calendarGrid');
+      const dayNames = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+      dayNames.forEach(d => {
+        const el = document.createElement('div');
+        el.className = 'cal-day-name';
+        el.textContent = d;
+        grid.appendChild(el);
+      });
+
+      const firstDay = new Date(year, month - 1, 1);
+      let startDow = firstDay.getDay();
+      startDow = startDow === 0 ? 6 : startDow - 1;
+
+      const daysInMonth = new Date(year, month, 0).getDate();
+
+      for (let i = 0; i < startDow; i++) {
+        const el = document.createElement('div');
+        el.className = 'cal-day empty';
+        grid.appendChild(el);
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const el = document.createElement('div');
+        el.className = 'cal-day' + (d === highlightDay ? ' highlight' : '');
+        el.textContent = d;
+        grid.appendChild(el);
+      }
+    }
+
+    buildCalendar(2026, 8, 16);
+
+    // ===== Countdown =====
+    function updateCountdown() {
+      const target = new Date(CONFIG.eventDate).getTime();
+      const now = Date.now();
+      const diff = Math.max(0, target - now);
+
+      if (diff === 0) {
+        document.getElementById('cdDays').textContent = '00';
+        document.getElementById('cdHours').textContent = '00';
+        document.getElementById('cdMins').textContent = '00';
+        document.getElementById('cdSecs').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
+
+      document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+      document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cdMins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cdSecs').textContent = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ===== Scroll reveal =====
+    const sections = document.querySelectorAll('#app section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+    sections.forEach(s => observer.observe(s));
+
+    // ===== Open invitation =====
+    const landing = document.getElementById('landing');
+    const app = document.getElementById('app');
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    let musicPlaying = false;
+
+    bgMusic.volume = 0.6;
+
+    // === Muted autoplay trick ===
+    // Bước 1: play khi muted — trình duyệt cho phép
+    bgMusic.play().catch(() => { });
+
+    document.getElementById('openBtn').addEventListener('click', () => {
+      landing.classList.add('hide');
+      document.body.classList.remove('landing-active');
+      app.classList.add('show');
+
+      // Bước 2: bật tiếng khi user click — đây là tương tác người dùng nên luôn thành công
+      bgMusic.muted = false;
+      if (bgMusic.paused) {
+        bgMusic.play().catch(() => { });
+      }
+      musicPlaying = true;
+      musicBtn.textContent = '🎵';
+      musicBtn.classList.add('playing');
+
+      setTimeout(() => {
+        sections[0]?.classList.add('visible');
+        startPetals(); // hoa bắt đầu rơi khi mở thiệp
+      }, 400);
+    });
+
+    musicBtn.addEventListener('click', () => {
+      if (musicPlaying) {
+        bgMusic.pause();
+        musicBtn.textContent = '🔇';
+        musicBtn.classList.remove('playing');
+      } else {
+        bgMusic.muted = false; // đảm bảo không bị muted
+        bgMusic.play().catch(() => { });
+        musicBtn.textContent = '🎵';
+        musicBtn.classList.add('playing');
+      }
+      musicPlaying = !musicPlaying;
+    });
+
+    // ===== Guestbook =====
+    const STORAGE_KEY = 'graduation_guestbook_truc';
+    const messagesList = document.getElementById('messagesList');
+
+    function loadMessages() {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      const all = [...CONFIG.sampleMessages, ...saved].reverse();
+      messagesList.innerHTML = '';
+      all.forEach(m => {
+        const card = document.createElement('div');
+        card.className = 'message-card';
+        card.innerHTML = `
+          <div class="message-header">
+            <span class="message-name">${esc(m.name)}</span>
+            <span class="message-time">${esc(m.time)}</span>
+          </div>
+          <p class="message-text">${esc(m.text)}</p>`;
+        messagesList.appendChild(card);
+      });
+    }
+
+    function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    function formatTime() {
+      const n = new Date();
+      return `${String(n.getDate()).padStart(2, '0')}-${String(n.getMonth() + 1).padStart(2, '0')} ${String(n.getHours()).padStart(2, '0')}:${String(n.getMinutes()).padStart(2, '0')}`;
+    }
+
+    document.getElementById('gbSend').addEventListener('click', () => {
+      const name = document.getElementById('gbName').value.trim();
+      const text = document.getElementById('gbMessage').value.trim();
+      if (!name || !text) return;
+
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      saved.push({ name, text, time: formatTime() });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+      document.getElementById('gbName').value = '';
+      document.getElementById('gbMessage').value = '';
+      loadMessages();
+    });
+
+    loadMessages();
+
+    // ===== Falling Petals =====
+    function startPetals() {
+      const container = document.getElementById('petalContainer');
+      if (container.children.length > 0) return; // chỉ tạo 1 lần
+      const COUNT = 12;
+      for (let i = 0; i < COUNT; i++) {
+        const el = document.createElement('span');
+        el.textContent = '🌸';
+        const size = (Math.random() * 10 + 10).toFixed(1);    // 10–20px
+        const left = (Math.random() * 100).toFixed(1);         // 0–100vw
+        const dur = (Math.random() * 10 + 16).toFixed(1);    // 16–26s (chậm)
+        const delay = (Math.random() * 20).toFixed(1);          // 0–20s stagger
+        const sway = ((Math.random() - 0.5) * 60).toFixed(0); // ±30px
+        const opacity = (Math.random() * 0.35 + 0.2).toFixed(2); // 0.2–0.55
+        el.className = 'petal';
+        el.style.cssText = [
+          `font-size:${size}px`,
+          `left:${left}vw`,
+          `animation-duration:${dur}s`,
+          `animation-delay:${delay}s`,
+          `--sway:${sway}px`,
+          `--op:${opacity}`,
+        ].join(';');
+        container.appendChild(el);
+      }
+    }
+  </script>
+</body>
+
+</html>
