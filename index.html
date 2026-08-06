@@ -1603,24 +1603,26 @@
       document.getElementById('gbMessage').value = '';
     });
 
-    // ===== Falling Petals =====
+    // ===== Falling Stars =====
     function startPetals() {
       const container = document.getElementById('petalContainer');
       if (container.children.length > 0) return; // chỉ tạo 1 lần
-      const COUNT = 12;
+      const COUNT = 15; // Tăng số lượng lên chút để lung linh hơn
       for (let i = 0; i < COUNT; i++) {
         const el = document.createElement('span');
-        el.textContent = '🌸';
-        const size = (Math.random() * 10 + 10).toFixed(1);    // 10–20px
+        el.textContent = '✦'; // Ngôi sao 4 cánh
+        const size = (Math.random() * 8 + 12).toFixed(1);       // 12–20px
         const left = (Math.random() * 100).toFixed(1);         // 0–100vw
-        const dur = (Math.random() * 10 + 16).toFixed(1);    // 16–26s (chậm)
-        const delay = (Math.random() * 20).toFixed(1);          // 0–20s stagger
+        const dur = (Math.random() * 10 + 16).toFixed(1);    // 16–26s
+        const delay = (Math.random() * 20).toFixed(1);          // 0–20s
         const sway = ((Math.random() - 0.5) * 60).toFixed(0); // ±30px
-        const opacity = (Math.random() * 0.35 + 0.2).toFixed(2); // 0.2–0.55
+        const opacity = (Math.random() * 0.5 + 0.3).toFixed(2); // Sáng hơn chút
         el.className = 'petal';
         el.style.cssText = [
           `font-size:${size}px`,
           `left:${left}vw`,
+          `color:#e6c88e`, // Màu vàng óng
+          `text-shadow:0 0 8px rgba(230,200,142,0.8)`, // Hào quang phát sáng
           `animation-duration:${dur}s`,
           `animation-delay:${delay}s`,
           `--sway:${sway}px`,
