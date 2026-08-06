@@ -5,20 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thiệp Mời Lễ Tốt Nghiệp — Quỳnh Giang</title>
-  <meta name="description" content="Thiệp mời lễ tốt nghiệp của Quỳnh Giang — Chủ Nhật, 16/08/2026 tại Hội trường 700, 58 Lê Văn Hiến, Hà Nội.">
-  
+  <meta name="description"
+    content="Thiệp mời lễ tốt nghiệp của Quỳnh Giang — Chủ Nhật, 16/08/2026 tại Hội trường 700, 58 Lê Văn Hiến, Hà Nội.">
+
   <!-- Cấu hình hiển thị link khi gửi qua Zalo, Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://graduation-vtqgiang.vercel.app/">
   <meta property="og:title" content="Thiệp Mời Lễ Tốt Nghiệp — Quỳnh Giang">
-  <meta property="og:description" content="Trân trọng kính mời đến dự Lễ Tốt Nghiệp của Quỳnh Giang vào Chủ Nhật, 16/08/2026.">
+  <meta property="og:description"
+    content="Trân trọng kính mời đến dự Lễ Tốt Nghiệp của Quỳnh Giang vào Chủ Nhật, 16/08/2026.">
   <meta property="og:image" content="https://graduation-vtqgiang.vercel.app/images/main-photo.png">
 
   <!-- Cấu hình hiển thị link cho các nền tảng khác (Twitter, Telegram) -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://graduation-vtqgiang.vercel.app/">
   <meta property="twitter:title" content="Thiệp Mời Lễ Tốt Nghiệp — Quỳnh Giang">
-  <meta property="twitter:description" content="Trân trọng kính mời đến dự Lễ Tốt Nghiệp của Quỳnh Giang vào Chủ Nhật, 16/08/2026.">
+  <meta property="twitter:description"
+    content="Trân trọng kính mời đến dự Lễ Tốt Nghiệp của Quỳnh Giang vào Chủ Nhật, 16/08/2026.">
   <meta property="twitter:image" content="https://graduation-vtqgiang.vercel.app/images/main-photo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1232,8 +1235,8 @@
         <p class="location-address" id="locationAddress">58 Lê Văn Hiến, Đông Ngạc, Bắc Từ Liêm, Hà Nội</p>
         <div class="map-wrap">
           <iframe id="mapFrame"
-            src="https://maps.google.com/maps?q=58+L%C3%AA+V%C4%83n+Hi%E1%BA%BFn%2C+%C4%90%C3%B4ng+Ng%E1%BA%A1c%2C+B%E1%BA%AFc+T%E1%BB%AB+Li%C3%AAm%2C+H%C3%A0+N%E1%BB%99i&output=embed&z=16"
-            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.9331115707455!2d105.77021787508221!3d21.07533358058572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345525d7347ffb%3A0x409ffebc446a3160!2zSOG7jWMgVmnhu4duIFTDoGkgQ2jDrW5o!5e0!3m2!1svi!2s!4v1786022864779!5m2!1svi!2s"
+            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
           </iframe>
         </div>
 
@@ -1323,7 +1326,7 @@
       eventTime: '14:00',
       locationName: 'Hội trường 700',
       locationAddress: '58 Lê Văn Hiến, Đông Ngạc, Bắc Từ Liêm, Hà Nội',
-      mapQuery: '58+L%C3%AA+V%C4%83n+Hi%E1%BA%BFn%2C+%C4%90%C3%B4ng+Ng%E1%BA%A1c%2C+B%E1%BA%AFc+T%E1%BB%AB+Li%C3%AAm%2C+H%C3%A0+N%E1%BB%99i',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.9331115707455!2d105.77021787508221!3d21.07533358058572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345525d7347ffb%3A0x409ffebc446a3160!2zSOG7jWMgVmnhu4duIFTDoGkgQ2jDrW5o!5e0!3m2!1svi!2s!4v1786022864779!5m2!1svi!2s',
       mainPhoto: 'images/main-photo.png',
       footerMessage: 'Chúc em iu luôn thành công và hạnh phúc trên con đường phía trước! ❤️',
       gallery: [
@@ -1356,7 +1359,7 @@
     document.getElementById('locationAddress').textContent = CONFIG.locationAddress;
     document.getElementById('mainPhoto').src = CONFIG.mainPhoto;
     document.getElementById('footerMessage').textContent = CONFIG.footerMessage;
-    document.getElementById('mapFrame').src = `https://maps.google.com/maps?q=${CONFIG.mapQuery}&output=embed&z=16`;
+    document.getElementById('mapFrame').src = CONFIG.mapUrl;
 
     // Gallery
     const galleryGrid = document.getElementById('galleryGrid');
@@ -1485,9 +1488,8 @@
 
       // Bước 2: bật tiếng khi user click — đây là tương tác người dùng nên luôn thành công
       bgMusic.muted = false;
-      if (bgMusic.paused) {
-        bgMusic.play().catch(() => { });
-      }
+      bgMusic.currentTime = 4.5; // Bắt đầu phát từ 4.5s
+      bgMusic.play().catch(() => { });
       musicPlaying = true;
       musicBtn.textContent = '🎵';
       musicBtn.classList.add('playing');
