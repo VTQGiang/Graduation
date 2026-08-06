@@ -1317,7 +1317,10 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
-  <script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+
     // ===== CẤU HÌNH — Sửa thông tin tại đây =====
     const CONFIG = {
       name: 'Quỳnh Giang',
@@ -1515,26 +1518,21 @@
       musicPlaying = !musicPlaying;
     });
 
-    // ===== Guestbook =====
-    const STORAGE_KEY = 'graduation_guestbook_truc';
-    const messagesList = document.getElementById('messagesList');
+    // ===== Guestbook (Firebase) =====
+    const firebaseConfig = {
+      apiKey: "AIzaSyCntyM1be-3ZFYhVMhdTNXFbQiAM9wYLVA",
+      authDomain: "graduation-3b35d.firebaseapp.com",
+      databaseURL: "https://graduation-3b35d-default-rtdb.firebaseio.com",
+      projectId: "graduation-3b35d",
+      storageBucket: "graduation-3b35d.firebasestorage.app",
+      messagingSenderId: "649390496902",
+      appId: "1:649390496902:web:34e32cddc8a1dc84074507"
+    };
 
-    function loadMessages() {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      const all = [...CONFIG.sampleMessages, ...saved].reverse();
-      messagesList.innerHTML = '';
-      all.forEach(m => {
-        const card = document.createElement('div');
-        card.className = 'message-card';
-        card.innerHTML = `
-          <div class="message-header">
-            <span class="message-name">${esc(m.name)}</span>
-            <span class="message-time">${esc(m.time)}</span>
-          </div>
-          <p class="message-text">${esc(m.text)}</p>`;
-        messagesList.appendChild(card);
-      });
-    }
+    const appFirebase = initializeApp(firebaseConfig);
+    const db = getDatabase(appFirebase);
+    const messagesRef = ref(db, 'guestbook');
+    const messagesList = document.getElementById('messagesList');
 
     function esc(str) {
       const d = document.createElement('div');
@@ -1547,21 +1545,46 @@
       return `${String(n.getDate()).padStart(2, '0')}-${String(n.getMonth() + 1).padStart(2, '0')} ${String(n.getHours()).padStart(2, '0')}:${String(n.getMinutes()).padStart(2, '0')}`;
     }
 
+    onValue(messagesRef, (snapshot) => {
+      messagesList.innerHTML = '';
+      const data = snapshot.val();
+      const allMessages = [];
+
+      if (data) {
+        Object.keys(data).forEach(key => {
+          allMessages.push(data[key]);
+        });
+      }
+
+      CONFIG.sampleMessages.forEach(m => allMessages.push(m));
+
+      allMessages.reverse().forEach(m => {
+        const card = document.createElement('div');
+        card.className = 'message-card';
+        card.innerHTML = `
+          <div class="message-header">
+            <span class="message-name">${esc(m.name)}</span>
+            <span class="message-time">${esc(m.time)}</span>
+          </div>
+          <p class="message-text">${esc(m.text)}</p>`;
+        messagesList.appendChild(card);
+      });
+    });
+
     document.getElementById('gbSend').addEventListener('click', () => {
       const name = document.getElementById('gbName').value.trim();
       const text = document.getElementById('gbMessage').value.trim();
       if (!name || !text) return;
 
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      saved.push({ name, text, time: formatTime() });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+      push(messagesRef, {
+        name: name,
+        text: text,
+        time: formatTime()
+      });
 
       document.getElementById('gbName').value = '';
       document.getElementById('gbMessage').value = '';
-      loadMessages();
     });
-
-    loadMessages();
 
     // ===== Falling Petals =====
     function startPetals() {
