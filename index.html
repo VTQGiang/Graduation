@@ -1167,7 +1167,7 @@
   <!-- Music -->
   <button class="music-btn" id="musicBtn" title="Bật/tắt nhạc">🔇</button>
   <audio id="bgMusic" loop preload="auto" muted>
-    <source src="bg-music.mp3?v=2" type="audio/mpeg">
+    <source src="newmusic.mp3" type="audio/mpeg">
   </audio>
 
   <!-- ===== LANDING ===== -->
@@ -1508,7 +1508,7 @@
 
       // Bước 2: bật tiếng khi user click — đây là tương tác người dùng nên luôn thành công
       bgMusic.muted = false;
-      bgMusic.currentTime = 4.5; // Bắt đầu phát từ 4.5s
+      bgMusic.currentTime = 3.5; // Bắt đầu phát từ 4.5s
       bgMusic.play().catch(() => { });
       musicPlaying = true;
       musicBtn.textContent = '🎵';
