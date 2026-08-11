@@ -1167,7 +1167,7 @@
   <!-- Music -->
   <button class="music-btn" id="musicBtn" title="Bật/tắt nhạc">🔇</button>
   <audio id="bgMusic" loop preload="auto" muted>
-    <source src="newmusic.mp3" type="audio/mpeg">
+    <source src="votay.mp3" type="audio/mpeg">
   </audio>
 
   <!-- ===== LANDING ===== -->
@@ -1359,7 +1359,7 @@
       ],
       sampleMessages: [],
       guestName: 'Bạn',
-      welcomeText: 'Hành trình 4 năm học tập đã chính thức khép lại để mở ra những bước tiến mới. Sự hiện diện và những lời chúc của bạn chính là món quà ý nghĩa nhất đối với Quỳnh Giang trong ngày đặc biệt này! ❤️',
+      welcomeText: `Sau một chặng đường đủ dài với bài vở, deadline và vô vàn những ngày tháng ở giảng đường, cuối cùng Quỳnh Giang cũng đã chính thức hoàn thành hành trình sinh viên của mình rồi! 🎓<br><br>Một ngày đặc biệt như này thì tất nhiên không thể thiếu những người bạn đã đồng hành cùng Giang. Vì vậy, Giang thân ái gửi lời mời đến mọi người đến chung vui, gặp nhau một chút, chụp thật nhiều ảnh xinh và cùng Giang lưu lại kỷ niệm của ngày <b>QUỲNH GIANG TỐT NGHIỆP</b> nhaaa 📸✨`,
     };
     // ===== Init config =====
     // Lấy tên người nhận từ URL (ví dụ: ?to=Anh+Hùng)
@@ -1369,7 +1369,7 @@
 
     document.getElementById('landingGuest').textContent = `Kính mời: ${displayGuest}`;
     document.getElementById('welcomeGuest').textContent = `Trân trọng kính mời ${displayGuest}`;
-    document.getElementById('welcomeText').textContent = CONFIG.welcomeText;
+    document.getElementById('welcomeText').innerHTML = CONFIG.welcomeText;
 
     document.getElementById('landingName').textContent = CONFIG.name;
     document.getElementById('cardName').textContent = CONFIG.name;
@@ -1508,7 +1508,7 @@
 
       // Bước 2: bật tiếng khi user click — đây là tương tác người dùng nên luôn thành công
       bgMusic.muted = false;
-      bgMusic.currentTime = 3.5; // Bắt đầu phát từ 4.5s
+      bgMusic.currentTime = 157; // Bắt đầu phát từ 4.5s
       bgMusic.play().catch(() => { });
       musicPlaying = true;
       musicBtn.textContent = '🎵';
